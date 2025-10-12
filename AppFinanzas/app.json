@@ -10,5 +10,20 @@
         "buildType": "apk"
       }
     }
+  },
+  "extra": {
+    "eas": {
+      "projectId": "c0ac06ba-f73a-4d76-9090-41e514298b08"
+    }
+  },
+  "expo": {
+    "android": {
+      "package": "com.maurogarzia.appfinanzas"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c0ac06ba-f73a-4d76-9090-41e514298b08"
+      }
+    }
   }
 }
