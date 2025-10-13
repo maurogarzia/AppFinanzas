@@ -32,6 +32,7 @@ npm install
 npx expo start
 ```
 Link de descarga: https://expo.dev/artifacts/eas/t5MdgeZV6Bf93fdMyhqCSB.apk 
+
 📋 Funcionalidades principales
 
 ➕ Agregar nuevos movimientos financieros.
