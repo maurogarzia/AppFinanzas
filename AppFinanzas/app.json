@@ -17,6 +17,12 @@
     }
   },
   "expo": {
+    "name": "MiAppFinanzas",
+    "slug": "appfinanzas",
+    "icon": "./assets/iconApp.png",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "platforms": ["android"],
     "android": {
       "package": "com.maurogarzia.appfinanzas"
     },

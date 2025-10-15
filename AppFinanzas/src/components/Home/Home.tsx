@@ -1,14 +1,16 @@
-import {View, Text} from 'react-native'
+import {View, Text, Pressable} from 'react-native'
 import styles from './HomeStyles'
 import { useEffect, useState } from 'react'
 import { useStoreMovents } from '../../store/useStoreMovents'
 import { TableOfMovents } from '../TableOfMovents/TableOfMovents'
 import { Pie } from '../PieChart/Pie'
+import useStoreModal from '../../store/useStoreModal'
 
 
 export const Home = () => {
 
     const {movents} = useStoreMovents()
+    const {setViewScreen} = useStoreModal()
 
     const [income, setIncome] = useState<number>(0)
     const [expense, setExpense] = useState<number>(0)
@@ -38,6 +40,19 @@ export const Home = () => {
                 <Text style={{'color' : 'white'}}>Balance <Text style={balance === 0 ? styles.row : (balance < 0 ? styles.negative : styles.positive)}>${balance}</Text></Text>
             </View>
 
+            <View style={styles.summaryButton}>
+                <Pressable 
+                    onPress={() => setViewScreen(true)}
+                    style={({pressed}) => pressed ? styles.buttonResumenPressed : styles.buttonResumen}
+                >
+                    {({pressed}) => 
+                        (<Text style={pressed ? {'color' : 'black', 'textAlign' : 'center'} : {'color' : 'white', 'textAlign' : 'center'}}>
+                            Resumenes
+                        </Text>)
+                    }
+                    
+                </Pressable>
+            </View>
 
             {movents.length > 0 && <Pie/> }
 

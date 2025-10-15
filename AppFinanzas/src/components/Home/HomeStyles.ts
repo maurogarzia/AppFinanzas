@@ -28,6 +28,22 @@ const styles = StyleSheet.create({
     },
     row : {
         backgroundColor: 'gray'
+    },
+    summaryButton: {
+        padding: 10,
+        marginTop: 10
+    },
+    buttonResumen: {
+        backgroundColor: 'black',
+        padding: 10,
+        width: 100,
+        borderRadius: 10
+    },
+    buttonResumenPressed: {
+        backgroundColor: 'white',
+        padding: 10,
+        width: 100,
+        borderRadius: 10
     }
     
 })

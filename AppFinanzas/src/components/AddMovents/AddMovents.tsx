@@ -91,8 +91,8 @@ export const AddMovents = () => {
                     <Picker
                         selectedValue={newMovent.type}
                         onValueChange={(value) => handleChange('type', value)}
-                        style={{ color: 'black', backgroundColor: 'white' }} // 👈 forzamos contraste
-                        dropdownIconColor="black" // 👈 ícono visible
+                        style={{ color: 'gray', backgroundColor: 'white' }} // 👈 forzamos contraste
+                        dropdownIconColor="gray" // 👈 ícono visible
                     >
                         <Picker.Item label='Sin seleccion' value=''/>
                         <Picker.Item label='Ingreso' value='ingreso'/>

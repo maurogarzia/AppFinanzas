@@ -11,7 +11,7 @@ import useStoreModal from "../../store/useStoreModal"
 export const TableOfMovents = () => {
 
     const {
-        movents, setActiveMovent, deleteMovents, setLisIncome, setListExpenses, setListRecent, setListAncient, listAncient, listExpenses, listIncome, listRecent
+        movents, setActiveMovent, deleteMovents, setLisIncome, setListExpenses, setListRecent, setListAncient, listAncient, listExpenses, listIncome, listRecent, listMoventsOfMonths, setListMoventsOfMonths
 
     } = useStoreMovents()
     const {openView} = useStoreModal()
@@ -51,7 +51,8 @@ export const TableOfMovents = () => {
         setLisIncome(),
         setListExpenses(),
         setListRecent(),
-        setListAncient()
+        setListAncient(),
+        setListMoventsOfMonths()
     },[movents])
 
     return (
@@ -123,7 +124,7 @@ export const TableOfMovents = () => {
                 {movents.length < 1 && <Text style={styles.emptyList}>No hay movimientos registrados</Text>}
 
                 {/* Todos los movimientos */}
-                {(viewMovents === 'allsMovents' && search === '') && movents.map((m) => (
+                {(viewMovents === 'allsMovents' && search === '') && listMoventsOfMonths.map((m) => (
                     <View key={m.id} style={{'borderBottomWidth' : 3, 'borderColor' : 'white'}}>
                         <Text style={styles.date}>{m.date}</Text>
                         <Text style={styles.row}>{m.description}</Text>

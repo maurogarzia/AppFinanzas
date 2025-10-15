@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 15,
         width: '100%',
+        height: 150
         
     },
     date:{
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
         width: 160,
         padding: 10,
         textAlign: 'center',
-        backgroundColor: 'gray',
+        backgroundColor: 'black',
         borderRadius: 10
     },
     row: {
