@@ -52,9 +52,9 @@ export const SummaryOfMonths = () => {
                             : 
                             <View style={style.moventOfMonth}>
                                 <View style={style.containerBalance}>
-                                    <Text style={{'color' : 'white'}}>Ingresos: $ {income}</Text>
-                                    <Text style={{'color' : 'white'}}>Gastos: $ {expense}</Text>
-                                    <Text style={{'color' : 'white'}}>Balance: $ {balance}</Text>
+                                    <Text style={{'color' : 'white', 'textAlign': 'center'}}>Ingresos: $ {income}</Text>
+                                    <Text style={{'color' : 'white', 'textAlign': 'center'}}>Gastos: $ {expense}</Text>
+                                    <Text style={{'color' : 'white', 'textAlign': 'center'}}>Balance: $ {balance}</Text>
                                 </View>
 
                                 {

@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         width: 160,
         color: 'gray',
-        
+        padding: 10
     },
     buttonSearch: {
         width: 90,

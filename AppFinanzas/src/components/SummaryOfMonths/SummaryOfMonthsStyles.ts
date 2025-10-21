@@ -31,13 +31,17 @@ export const style = StyleSheet.create({
     },
     containerBalance: {
         padding: 10,
-        
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center'
+
     },
     moventOfMonth: {
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        
     },
     movent: {
         width: '100%',
@@ -88,6 +92,18 @@ export const style = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         width: 80
+    },
+    button: {
+        backgroundColor: 'white',
+        padding: 6,
+        borderRadius: 10,
+        marginTop: 5
+    },
+    buttonBlack : {
+        backgroundColor: 'black',
+        padding: 6,
+        borderRadius: 10,
+        marginTop: 5
     }
     
 })

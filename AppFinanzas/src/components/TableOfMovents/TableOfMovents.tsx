@@ -59,6 +59,15 @@ export const TableOfMovents = () => {
         <View style = {styles.container}>
             <View style={styles.containerTitle}>
                 <Text style={styles.title}>Movimientos</Text>
+
+                <View style={styles.containerSearch}>
+                    <TextInput style={styles.input}
+                        placeholderTextColor="#999"  // <- color visible
+                        placeholder="Buscar..."
+                        onChangeText={(e) => setSearch(e)}
+                    />
+                </View>
+
                 <Pressable 
                     onPress={() => handleOpen(null)}
                     style={({pressed}) => {
@@ -110,14 +119,6 @@ export const TableOfMovents = () => {
                         {'textAlign' : 'center', 'color' : 'black'} : {'textAlign' : 'center', 'color' : 'white'}}>Reciente</Text>
                 </Pressable>
 
-                <View style={styles.containerSearch}>
-                    <TextInput style={styles.input}
-                        placeholderTextColor="#999"  // <- color visible
-                        placeholder="Buscar..."
-                        onChangeText={(e) => setSearch(e)}
-                    />
-                    
-                </View>
             </View>
 
             <View style={styles.movent}>

@@ -52,7 +52,18 @@ export const AddMovents = () => {
         if (movent.type === '') {
             alert('Se debe agregar un tipo')
             return
-        } 
+        }
+        
+        if (!movent.date.trim() || !movent.description.trim()){
+            alert('No puede quedar un campo sin llenar')
+            return
+        }
+
+        if(movent.amount < 1){
+            alert('No se puede agregar un monto menor a 1')
+            return
+        }
+
 
         if (activeMovent) {
             editMovents(movent.id, movent)
