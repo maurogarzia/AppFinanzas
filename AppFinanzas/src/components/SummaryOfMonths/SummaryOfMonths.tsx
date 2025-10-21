@@ -4,6 +4,7 @@ import { useStoreMovents } from "../../store/useStoreMovents"
 import { IMovents } from "../../types/IMovents"
 import { style } from "./SummaryOfMonthsStyles"
 import { calculate } from "../../utils/calculate"
+import { DownloadMovents } from "../DownloadMovent/DownloadMovents"
 
 export const SummaryOfMonths = () => {
 
@@ -55,6 +56,7 @@ export const SummaryOfMonths = () => {
                                     <Text style={{'color' : 'white', 'textAlign': 'center'}}>Ingresos: $ {income}</Text>
                                     <Text style={{'color' : 'white', 'textAlign': 'center'}}>Gastos: $ {expense}</Text>
                                     <Text style={{'color' : 'white', 'textAlign': 'center'}}>Balance: $ {balance}</Text>
+                                    <DownloadMovents resume={monthMovent} balance={balance} income={income} expense={expense}/>
                                 </View>
 
                                 {
