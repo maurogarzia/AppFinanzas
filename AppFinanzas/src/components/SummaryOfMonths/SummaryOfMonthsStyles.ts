@@ -22,7 +22,13 @@ export const style = StyleSheet.create({
         backgroundColor: 'black',
         padding: 10,
         width: '100%',
-        textAlign: 'center'
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        
+        alignItems: 'center',
+        
+        gap: 10
     },
     month: {
         backgroundColor: 'black',

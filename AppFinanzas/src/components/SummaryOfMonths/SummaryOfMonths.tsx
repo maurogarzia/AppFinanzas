@@ -5,11 +5,17 @@ import { IMovents } from "../../types/IMovents"
 import { style } from "./SummaryOfMonthsStyles"
 import { calculate } from "../../utils/calculate"
 import { DownloadMovents } from "../DownloadMovent/DownloadMovents"
+import LeftArrow from "../Arrows/LeftArrow/LeftArrow"
+import { useState } from "react"
+import BottomArrow from "../Arrows/BottomArrow/BottomArrow"
+
 
 export const SummaryOfMonths = () => {
 
     const {movents, setActiveMovent, deleteMovents} = useStoreMovents()
     const {openView} = useStoreModal()
+
+    const [showMonth, setShowMonth] = useState<{ [key: string]: boolean }>({});
 
     const months = [
         ['Enero', '01'],
@@ -44,8 +50,30 @@ export const SummaryOfMonths = () => {
                 const {income, expense, balance} = calculate(monthMovent)
                 return (
                     <View key={month[1]} style={style.containerMonth}> 
-                        <Text style={style.title}>{month[0]}</Text>
-                        {monthMovent.length < 1 
+                    
+                        <Text style={style.title}>
+                            <Pressable 
+                                style={{'display' : 'flex', 'flexDirection': 'row'}}
+                                onPress={() => 
+                                    setShowMonth(prev => ({
+                                        ...prev,
+                                        [month[1]] : !prev[month[1]]
+                                }))}
+                            >
+                                <Text style={{color: 'white'}}>{month[0]}</Text>
+                                
+                                {showMonth[month[1]]
+                                    ? 
+                                    (<BottomArrow/>)
+                                    :
+                                    (<LeftArrow/>)
+                                }
+                            </Pressable>
+                        </Text>
+
+                        
+                        {showMonth[month[1]] && (
+                            monthMovent.length < 1 
                             ?
                             <View style={style.month}>
                                 <Text style={{'color' : 'white', 'textAlign' : 'center'}}>No hay movimientos</Text>
@@ -80,7 +108,7 @@ export const SummaryOfMonths = () => {
                                     ))
                                 }
                             </View>
-                        }
+                        )}
                     </View>
                     
                 )
